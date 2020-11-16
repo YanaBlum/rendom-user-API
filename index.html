@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Random User Page API Project</title>
+</head>
+<body>
+  <div class="container">	
+    <div class="user-container"></div>	
+    <div class="quote-container"></div>	
+    <div class="content-container">	
+        <div class="pokemon-container"></div>	
+        <div class="meat-container"></div>	
+    </div>	
+    <div class="friends">	
+        <h4>Friends</h4>	
+        <div class="friends-container">	
+        </div>	
+    </div>	
+    <div class="buttons">	
+        <button id="load">Load User Data</button>	
+        <button id="display">Display User</button>	
+    </div>	
+</div>
+
+<script id="quote-template" type="text/x-handlebars-template">
+  <p>FAVORITE QUOTE:</p>
+<p>"{{this}}"</p>
+</script>
+
+<script id="bacon-template" type="text/x-handlebars-template">
+  <p>ABOUT ME:</p>
+<div class="bacon">{{this}}</div>
+</script>
+
+<script id="mainuser-template" type="text/x-handlebars-template">
+  <img src="{{img}}" id="picture">
+  <div class="mainuser-info">
+    <p>{{name}}</p>
+    <p>{{addreses}}</p>
+  </div>
+</script>
+
+<script id="pokemon-template" type="text/x-handlebars-template">
+  <img src="{{img}}" id="pokemon-image">
+  <p>FAVORITE POKEMONE:</p>
+  <div class="pokemon" id="pokemon-text">
+    <p>{{name}}</p>
+  </div>
+</script>
+
+<script id="friends-template" type="text/x-handlebars-template">
+{{#each friends}}
+<ul>
+  <li>{{this}}</li>
+</ul>
+{{/each}}
+</script>
+  
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src="renderer.js"></script>
+  <script src="APIManager.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
